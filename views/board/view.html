@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/write.css">
+    <link rel="stylesheet" type="text/css" href="/css/write.css">
 </head>
 <body>
     <div>
-        <textarea name="" id="write_title" cols="30" rows="1" maxlength="30" readonly></textarea>
+        <textarea name="" id="write_title" cols="30" rows="1" maxlength="30" readonly>{{board.title}}</textarea>
     </div>
     <div>
-        <textarea name="" id="write_textarea" cols="30" rows="10" readonly></textarea>    
+        <textarea name="" id="write_textarea" cols="30" rows="10" readonly>{{board.contents}}</textarea>    
     </div>
-    <a href="/board/modify/"+{{board.boardNo}}>수정</a>
-    <button type="button">삭제</button>
+    <a href="/board/modify?boardNo={{board.boardNo}}">수정</a>
+    <button id="delete" type="button">삭제</button>
+
+    <script>
+        document.getElementById('delete').addEventListener('click', function() {
+            location.href = '/board/delete?boardNo={{board.boardNo}}';
+        })
+
+    </script>
 </body>
 </html>

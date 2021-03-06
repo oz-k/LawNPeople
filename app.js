@@ -3,6 +3,12 @@ const app = express();
 const session = require('express-session');
 const nunjucks = require('nunjucks');
 const flash = require('connect-flash')
+
+app.use(express.static(__dirname+'/views/template'));
+app.use(express.static(__dirname+'/views/board'));
+app.use(express.static(__dirname+'/views/home'));
+app.use(express.static(__dirname+'/views/join'));
+app.use(express.static(__dirname+'/views/login'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(flash());
@@ -50,12 +56,12 @@ app.get('/user', userRouter);
 
 const boardRouter = require('./routes/board');
 app.get('/board', boardRouter);
-app.get('/board/:boardNo', boardRouter);
+app.get('/board/view', boardRouter);
 app.get('/board/write', boardRouter);
 app.post('/board/write-confirm', boardRouter);
-app.get('/board/modify/:boardNo', boardRouter);
-app.post('/board/modify-confirm/:boardNo', boardRouter);
-app.get('/board/delete/:boardNo', boardRouter);
+app.get('/board/modify', boardRouter);
+app.post('/board/modify-confirm', boardRouter);
+app.get('/board/delete', boardRouter);
 
 app.listen(80, function() {
     console.log('start server');

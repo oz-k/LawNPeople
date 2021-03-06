@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/write.css">
+    <link rel="stylesheet" type="text/css" href="/css/write.css">
 </head>
 <body>
+    <form action="/board/write-confirm" method="post">
     <div>
-        <textarea name="" id="write_title" cols="30" rows="1" maxlength="30"></textarea>
+        <textarea name="title" id="write_title" cols="30" rows="1" maxlength="30"></textarea>
     </div>
     <div>
-        <textarea name="" id="write_textarea" cols="30" rows="10" ></textarea>    
-    </div>
-    <a href="/board/write-confirm">확인</a>
+        <textarea name="contents" id="write_textarea" cols="30" rows="10" ></textarea>    
+        </div>
+    
+    <button>확인</button>
     <a href="/board">취소</a>
+</form>
 </body>
 </html>

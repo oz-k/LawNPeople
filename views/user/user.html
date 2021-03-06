@@ -8,10 +8,9 @@
 <body>
     {% extends "../template/new.html" %}
     {% block content %}
-    <div class="content id">아이디 : </div>
-    <div class="content name">이름 : </div>
-    <div class="content age">나이 : </div>
-    <div class="content email">이메일 : </div>
+    <div class="content name">이름 : {{userInfo.name}}</div>
+    <div class="content age">나이 : {{userInfo.age}}</div>
+    <div class="content email">이메일 : {{userInfo.email}}</div>
     <div class="content my">작성글</div>
     {% endblock %}
 </body>
