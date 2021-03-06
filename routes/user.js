@@ -17,7 +17,7 @@ router.get('/user', function(req, res) {
                                 age:user.age,
                                 email:user.email
                             },
-                            board : boards
+                            boards : boards
                         })
                     }
                 });

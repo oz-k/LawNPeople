@@ -11,7 +11,7 @@
     {% block content %}
     글번호 제목 내용 글쓴이 <br>
     {%for board in boards%}
-        {{board.boardNo}} {{board.title}} {{board.contents}} {{board.writer}} <br>
+        <div>{{board.boardNo}} {{board.title}} {{board.contents}} {{board.writer}}</div> <br>
     {%endfor%}
     <button class="write"><a href="/board/write">글 작성</a></button>
     {% endblock %}
