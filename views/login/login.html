@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+</head>
+<body>
+    <form action="/auth" method="POST">
+        <div class="id_box">
+            <input type="text" name="id" id="id" placeholder="아이디" value={{id}}>
+        </div>
+        <div class="pw_box">
+            <input type="password" name="pw" id="pw" placeholder="비밀번호">
+        </div>
+        <button>로그인</button>
+    </form>
+    <a href="/join">회원가입</a>
+</body>
+</html>
