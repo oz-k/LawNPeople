@@ -34,8 +34,8 @@ nunjucks.configure('views', {
 
 require('./models/index')();
 
-const mainRouter = require('./routes/main');
-app.get('/', mainRouter);
+const homeRouter = require('./routes/home');
+app.get('/', homeRouter);
 
 const loginRouter = require('./routes/login');
 app.get('/login', loginRouter);
