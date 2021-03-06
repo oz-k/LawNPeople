@@ -18,7 +18,13 @@ router.get('/board/:boardNo', function(req, res) {
         if(err) console.log(err);
         else {
             if(board) {
-                res.render('board/board.html', {board:board, writer:})
+                let writer;
+                if(isAuthenticated() && req.session.passport.user === board.writer)
+                    writer = true;
+                else 
+                    writer = false;
+                    
+                res.render('board/board.html', {board:board, writer:writer});
             } else {
                 res.send('존재하지않는 게시글');
             }
