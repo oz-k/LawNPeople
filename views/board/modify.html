@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./write.css">
+</head>
+<body>
+    <div>
+        <textarea name="" id="write_title" cols="30" rows="1" maxlength="30">{{board.title}}</textarea>
+    </div>
+    <div>
+        <textarea name="" id="write_textarea" cols="30" rows="10" >{{board.contents}}</textarea>    
+    </div>
+    <a href="/board/modify-confirm/" + {{board.boardNo}}>확인</a>
+    <a href="/board/"+{{board.boardNo}}>취소</a>
+</body>
+</html>
