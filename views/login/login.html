@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
+    <title>{{title}}</title>
 </head>
 <body>
+    {% extends "new.html" %}
+    {% block content %}
     <form action="/auth" method="POST">
         <div class="id_box">
             <input type="text" name="id" id="id" placeholder="아이디" value={{id}}>
@@ -15,6 +17,7 @@
         </div>
         <button>로그인</button>
     </form>
-    <a href="/join">회원가입</a>
+    <a href="./join.html">회원가입</a>
+    {% endblock %}
 </body>
 </html>

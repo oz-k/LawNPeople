@@ -6,29 +6,32 @@
     <title>Document</title>
 </head>
 <body>
+    {% extends "new.html" %}
+    {% block content %}
     <div class="join_container">
-        <form action="/join-confirm" method="POST">
+        <form action="/auth" method="POST">
         <div class="box id">
-            <input type="text" name="id" id="id" placeholder="아이디" value={{id}}>
+            <input type="text" name="id" id="id" placeholder="아이디">
             <button>중복확인</button>
         </div>
         <div class="box pw">
-            <input type="password" name="pw" id="pw" placeholder="비밀번호" value={{pw}}>
+            <input type="password" name="pw" id="pw" placeholder="비밀번호">
         </div>
         <div class="box repw">
-            <input type="password" name="repw" id="repw" placeholder="비밀번호 재확인" value={{pw}}>
+            <input type="password" name="repw" id="repw" placeholder="비밀번호 재확인">
         </div>
         <div class="box name">
-            <input type="text" name="name" id="name" placeholder="이름" value={{name}}>
+            <input type="text" name="name" id="name" placeholder="이름">
         </div>
         <div class="box age">
-            <input type="number" name="age" id="age" value={{age}}>
+            <input type="number" name="age" id="age">
         </div>
         <div class="box email">
-            <input type="email" name="email" id="email" placeholder="이메일" value={{email}}>
+            <input type="email" name="email" id="email" placeholder="이메일">
         </div>
         <button>회원가입</button>
     </form>
     </div>
+    {% endblock %}
 </body>
 </html>
