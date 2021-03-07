@@ -9,6 +9,7 @@ app.use(express.static(__dirname+'/views/board'));
 app.use(express.static(__dirname+'/views/home'));
 app.use(express.static(__dirname+'/views/join'));
 app.use(express.static(__dirname+'/views/login'));
+app.use(express.static(__dirname+'/views/user'))
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(flash());
@@ -62,6 +63,9 @@ app.post('/board/write-confirm', boardRouter);
 app.get('/board/modify', boardRouter);
 app.post('/board/modify-confirm', boardRouter);
 app.get('/board/delete', boardRouter);
+
+const ajaxRouter = require('./routes/ajax');
+app.post('/ajax', ajaxRouter);
 
 app.listen(80, function() {
     console.log('start server');

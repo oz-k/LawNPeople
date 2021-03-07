@@ -17,23 +17,25 @@ function checkId() {
     }
     return false;
 }
-    $('#overlap').click(function() {
-       var id= 'test';
 
+console.log('in')
+document.getElementById('overlap').addEventListener('click', function() {
+    var id= 'test';
+    console.log('click')
 
-        //Ajax POST Method TEST
-        $.ajax({
-            url: '/api/post',
-              dataType: 'json',
-              type: 'POST',
-              data: id,
-              success: function(result) {
-                  if (result) {
-                     console.log(result);
-                  }
-              }
-          });
-    });
+    //Ajax POST Method TEST
+    $.ajax({
+        url: '/api/post',
+            dataType: 'json',
+            type: 'POST',
+            data: id,
+            success: function(result) {
+                if (result) {
+                    console.log(result);
+                }
+            }
+        });
+})
 
 function checkAll() {
     if(checkId()) {
