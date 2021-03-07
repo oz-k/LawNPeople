@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/join.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
     {% extends "../template/new.html" %}
     {% block content %}
     <div class="join_container">
-        <form action="/auth" method="POST">
+        <form action="/auth" method="POST" onsubmit="return checkAll()">
         <div class="box id">
             <input type="text" name="id" id="id" placeholder="아이디">
-            <button>중복확인</button>
+            <button id="overlap" type="button">중복확인</button>
         </div>
         <div class="box pw">
             <input type="password" name="pw" id="pw" placeholder="비밀번호">
         </div>
         <div class="box repw">
             <input type="password" name="repw" id="repw" placeholder="비밀번호 재확인">
+            <p class="message">비밀번호가 일치하지 않습니다.</p>
         </div>
         <div class="box name">
             <input type="text" name="name" id="name" placeholder="이름">
         </div>
         <div class="box age">
-            <input type="number" name="age" id="age">
+            <input type="number" name="age" id="age" min="0">
         </div>
         <div class="box email">
             <input type="email" name="email" id="email" placeholder="이메일">
@@ -34,4 +37,5 @@
     </div>
     {% endblock %}
 </body>
+<script type="text/javascript" src="/js/join.js"></script>
 </html>

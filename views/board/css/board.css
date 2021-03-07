@@ -1,0 +1,20 @@
+.board_title{
+    display: flex;
+    justify-content: space-around;
+}
+.b_title{
+    font-size: 24px;
+
+}
+.b_contents{
+    color: gray;
+    margin-bottom: 10px;
+}
+.b_contents > a{
+    text-decoration: none;
+    color: gray;
+}
+.write > a{
+    text-decoration: none;
+    color: black;
+}

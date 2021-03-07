@@ -1,0 +1,21 @@
+input{
+    width: 200px;
+    height: 30px;
+}
+input:focus{
+    outline: none;
+}
+.box{
+    margin-bottom: 30px;
+}
+.repw{
+    margin-bottom: 0; 
+}
+.message{
+    margin: 0 0 10px 0;
+    color: red;
+    visibility: hidden;
+}
+#age::-webkit-outer-spin-button, #age::-webkit-inner-spin-button{
+    appearance: none;
+}

@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="/css/write.css">
 </head>
 <body>
+    {% extends "../template/new.html" %}
+    {% block content %}
     <div>
         <textarea name="" id="write_title" cols="30" rows="1" maxlength="30" readonly>{{board.title}}</textarea>
     </div>
@@ -23,5 +25,6 @@
         })
 
     </script>
+    {% endblock %}
 </body>
 </html>

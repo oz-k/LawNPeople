@@ -1,8 +1,8 @@
 .container{
     border: 1px solid black;
     border-radius: 5px;
-    width: 600px;
-    height: 400px;
+    width: 1200px;
+    height: 600px;
     padding: 50px;
     margin: 0 auto;
 }
@@ -11,15 +11,17 @@
     justify-content: space-around;
     margin-bottom: 100px;
 }
+.menu{
+    width: 100px;
+}
 .menu > a{
     text-decoration: none;
     color: purple;
     font-size: 24px;
 }
-.menu{
-
-}
 .contents{
     text-align: center;
-    height: 
+}
+.user{
+    display: none;
 }
