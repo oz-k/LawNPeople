@@ -14,7 +14,7 @@ document.getElementById('overlap').addEventListener('click', function() {
 
     //Ajax POST Method TEST
     $.ajax({
-        url: '/api/post',
+        url: '/ajax',
             dataType: 'json',
             type: 'POST',
             data: id,
