@@ -6,19 +6,8 @@ const userName = document.querySelector('#name');
 const age = document.querySelector('#age');
 const email = document.querySelector('#email');
 
-// 수정 할거
-function checkId() {
-    if(!id.value) {
-        alert('아이디는 영문 대소문자와 숫자를 조합하여 4~12자리로 입력해야합니다.');
-        ("사용할 수 없는 ID입니다.");
-       userName.css('color', 'red');
-        id.focus();
-        return true;
-    }
-    return false;
-}
 
-console.log('in')
+
 document.getElementById('overlap').addEventListener('click', function() {
     var id= 'test';
     console.log('click')
@@ -38,13 +27,11 @@ document.getElementById('overlap').addEventListener('click', function() {
 })
 
 function checkAll() {
-    if(checkId()) {
+    if(idCompair()) {
         return false;
     } else if(pwCheck()) {
         return false;
     } else if(pwCompair()) {
-        return false;
-    } else if(repwCompair()) {
         return false;
     } else if(pwInspection()) {
         return false;
@@ -61,19 +48,19 @@ function checkAll() {
 
 function checkEmail(){
     if(email.value){
-        
         return false;
     } else{
         alert("이메일을 입력 해 주세요.");
+        email.focus();
         return true;
     }
 }
 function checkAge(){
     if(age.value){
-        
         return false;
     } else{
         alert("나이를 입력 해 주세요.");
+        age.focus();
         return true;
     }
 }
@@ -83,15 +70,7 @@ function checkName(){
         return false;
     } else{
         alert("이름을 입력 해 주세요.");
-        return true;
-    }
-}
-
-function repwCompair(){
-    if(repw.value){
-        return false;
-    } else {
-        alert("비밀번호2를 입력 해 주세요.");
+        userName.focus();
         return true;
     }
 }
@@ -101,6 +80,17 @@ function pwCompair(){
         return false;
     } else {
         alert("비밀번호를 입력 해 주세요.");
+        pw.focus();
+        return true;
+    }
+}
+
+function idCompair(){
+    if(id.value){
+        return false;
+    } else {
+        alert("아이디를 입력 해 주세요.");
+        id.focus();
         return true;
     }
 }
@@ -109,7 +99,8 @@ function pwInspection(){
     if(pw.value == repw.value) {
         return false;
     } else {
-        alert("비밀번호가 일치 하지 않습니다.");
+        alert("비밀번호가 일치하지 않습니다.");
+        repw.focus();
         return true;
     }
 }

@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends "../template/new.html" %}
+    {% block content %}
     <link rel="stylesheet" type="text/css" href="/css/join.css">
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
-    {% extends "../template/new.html" %}
-    {% block content %}
     <div class="join_container">
         <form action="/auth" method="POST" onsubmit="return checkAll()">
         <div class="box id">
@@ -35,7 +27,5 @@
         <button>회원가입</button>
     </form>
     </div>
-    {% endblock %}
-</body>
 <script type="text/javascript" src="/js/join.js"></script>
-</html>
+{% endblock %}
