@@ -9,29 +9,27 @@ const email = document.querySelector('#email');
 
 
 document.getElementById('overlap').addEventListener('click', function() {
-    var id= 'test';
-    console.log('click')
-
-    //Ajax POST Method TEST
-    $.ajax({
-        url: '/ajax',
-            dataType: 'json',
-            type: 'POST',
-            data: id,
-            success: function(result) {
+    if(!idCompare()){
+        //Ajax POST Method TEST
+        $.ajax({
+            url: '/ajax',
+                dataType: 'json',
+                type: 'POST',
+                data: id.value,
+                success: function(result) {
                 if (result) {
-                    console.log(result);
                 }
             }
         });
+    } 
 })
 
 function checkAll() {
-    if(idCompair()) {
+    if(idCompare()) {
         return false;
     } else if(pwCheck()) {
         return false;
-    } else if(pwCompair()) {
+    } else if(pwCompare()) {
         return false;
     } else if(pwInspection()) {
         return false;
@@ -75,7 +73,7 @@ function checkName(){
     }
 }
 
-function pwCompair(){
+function pwCompare(){
     if(pw.value){
         return false;
     } else {
@@ -85,7 +83,7 @@ function pwCompair(){
     }
 }
 
-function idCompair(){
+function idCompare(){
     if(id.value){
         return false;
     } else {
