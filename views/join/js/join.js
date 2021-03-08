@@ -10,14 +10,15 @@ const email = document.querySelector('#email');
 
 document.getElementById('overlap').addEventListener('click', function() {
     if(!idCompare()){
-        //Ajax POST Method TEST
         $.ajax({
             url: '/ajax',
                 dataType: 'json',
                 type: 'POST',
                 data: id.value,
                 success: function(result) {
+                    console.log(result)
                 if (result) {
+                    
                 }
             }
         });
