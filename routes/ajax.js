@@ -7,9 +7,9 @@ router.post('/ajax', function(req, res) {
         if(err) {
             console.log(err);
         } else if(result) {
-            res.send({result:false});
+            res.send(false);
         } else {
-            res.send({result:true});
+            res.send(true);
         }
     })
 })
