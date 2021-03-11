@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/user', function(req, res) {
+router.get('/user', function(req, res) { //마이페이지 화면
     if(req.isAuthenticated()) {
         let userModel = require('../models/user');
         let boardModel = require('../models/board');

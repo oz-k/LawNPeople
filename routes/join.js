@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/join', function(req, res) {
+router.get('/join', function(req, res) { //회원가입창
     if(req.session.userData) {
         res.render('join/join.html', {
             id:req.session.userData.id, 
@@ -15,19 +15,22 @@ router.get('/join', function(req, res) {
     }
 })
 
-router.post('/join-confirm', function(req, res) {
+router.post('/join-confirm', function(req, res) { //회원가입 로직
     let userModel = require('../models/user');
     userModel.findOne({id:req.body.id}, function(err, user) {
-        if(err) console.log(err);
-        if(!user) {
-            new userModel({
-                id:req.body.id,
-                pw:req.body.pw,
-                name:req.body.name,
-                age:req.body.age,
-                email:req.body.email
-            }).save();
-            res.redirect('/');
+        if(err) {
+            console.log(err);
+        } else if(!user) {
+            require('../resources/hash').hashing(req.body.pw).then(function(pw) {
+                new userModel({
+                    id:req.body.id,
+                    pw:pw,
+                    name:req.body.name,
+                    age:req.body.age,
+                    email:req.body.email
+                }).save();
+                res.redirect('/');
+            });
         } else {
             req.session.userData = {
                 id : req.body.id,

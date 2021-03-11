@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const boardModel = require('../models/board');
 
-router.get('/board', function(req, res) {
+router.get('/board', function(req, res) { //게시판 메인화면
     let boardModel = require('../models/board');
     boardModel.find({}, function(err, boards) {
         if(err) console.log(err);
@@ -11,7 +11,7 @@ router.get('/board', function(req, res) {
     })
 });
 
-router.get('/board/view', function(req, res) {
+router.get('/board/view', function(req, res) { //게시글화면
     let boardNo = req.query.boardNo;
     let boardModel = require('../models/board');
     boardModel.findOne({boardNo:boardNo}, function(err, board) {
@@ -32,7 +32,7 @@ router.get('/board/view', function(req, res) {
     })
 });
 
-router.get('/board/write', function(req, res) {
+router.get('/board/write', function(req, res) { //게시글 작성화면
     if(req.isAuthenticated()) {
         res.render('board/write.html', {});
     } else {
@@ -40,7 +40,7 @@ router.get('/board/write', function(req, res) {
     }
 });
 
-router.post('/board/write-confirm', function(req, res) {
+router.post('/board/write-confirm', function(req, res) { //게시글 작성로직
     new boardModel({
         title:req.body.title,
         contents:req.body.contents,
@@ -50,7 +50,7 @@ router.post('/board/write-confirm', function(req, res) {
     });
 })
 
-router.get('/board/modify', function(req, res) {
+router.get('/board/modify', function(req, res) { //게시글 수정화면
     let boardNo = parseInt(req.query.boardNo);
     if(boardNo) {
         if(req.isAuthenticated()) {
@@ -72,7 +72,7 @@ router.get('/board/modify', function(req, res) {
     }
 });
 
-router.post('/board/modify-confirm', function(req, res) {
+router.post('/board/modify-confirm', function(req, res) { //게시글 수정로직
     if(req.isAuthenticated()) {
         let params = req.body;
         let userId = req.session.passport.user;
@@ -92,7 +92,7 @@ router.post('/board/modify-confirm', function(req, res) {
     }
 });
 
-router.get('/board/delete', function(req, res) {
+router.get('/board/delete', function(req, res) { //게시글 삭제로직
     if(req.isAuthenticated()) {
         let boardNo = parseInt(req.query.boardNo);
         let userId = req.session.passport.user;

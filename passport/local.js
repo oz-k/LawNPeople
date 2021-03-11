@@ -6,9 +6,9 @@ module.exports = function(passport) {
         passwordField:'pw'
     }, function(id, pw, done) {
         const userModel = require('../models/user');
-        userModel.findOne({id:id, pw:pw}, function(err, user) {
+        userModel.findOne({id:id}, function(err, user) {
             if(err) console.log(err);
-            if(user != null) {
+            if(user != null && require('../resources/hash').comp(pw, user.pw)) {
                 return done(null, {'user':user.id});
             }
             return done(null, false, {msg:'mismatch'});

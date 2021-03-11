@@ -13,6 +13,12 @@
     <div class="content email">이메일 : {{userInfo.email}}</div>
     <div class="content my">작성글</div>
     {%for board in boards%}
+        <div class="board_title">
+            <div class="b_contents">{{board.boardNo}}</div>
+            <div class="b_contents"><a href="/view">{{board.title}}</a></div>
+            <div class="b_contents">{{board.writer}}</div> 
+        </div>
+    {%endfor%}
     {% endblock %}
 </body>
 </html>

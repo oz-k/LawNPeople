@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 
-router.get('/login', function(req, res) {
+router.get('/login', function(req, res) { //로그인화면
     let temp = req.flash();
     // let msg = temp.msg;
     // if(msg) {
@@ -18,7 +18,7 @@ router.get('/login', function(req, res) {
     })
 })
 
-router.post('/auth', function(req, res, next) {
+router.post('/auth', function(req, res, next) { //로그인로직
     req.flash('id', req.body.id);
 
     if(!req.body.id) { //id가 들어있는지 확인

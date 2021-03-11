@@ -6,7 +6,7 @@ const board = new Schema({
     boardNo:Number,
     title:{type:String, required:true},
     contents:{type:String},
-    writer:{type:Number, required:true}
+    writer:{type:String, required:true}
 });
 
 autoIncrement.initialize(mongoose.connection);

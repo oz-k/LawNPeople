@@ -69,4 +69,4 @@ app.post('/ajax', ajaxRouter);
 
 app.listen(80, function() {
     console.log('start server');
-})
+});
