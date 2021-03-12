@@ -1,16 +1,36 @@
 .board_title{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-top: 3px solid lightblue;
+    border-bottom: 2px solid lightblue;
+    padding: 5px 0 5px 0;
+}
+.contents_title{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0 3px 0;
+    border-bottom: 1px solid lightgray;
 }
 .b_title{
     font-size: 24px;
-
+    width: 100px;
 }
-.b_contents{
+.b_contents_No{
     color: gray;
     margin-bottom: 10px;
+    width: 100px;
 }
-.b_contents > a{
+.b_contents_title{
+    color: gray;
+    margin-bottom: 10px;
+    width: 500px;
+}
+.b_contents_writer{
+    color: gray;
+    margin-bottom: 10px;
+    width: 100px;
+}
+.b_contents_title > a{
     text-decoration: none;
     color: gray;
 }

@@ -1,3 +1,5 @@
+{% extends "../template/new.html" %}
+    {% block content %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,9 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
 <body>
-    {% extends "../template/new.html" %}
-    {% block content %}
-    <form action="/auth" method="POST">
+    <form action="/auth" method="POST" onsubmit="return check();">
         <div class="id_box">
             <input type="text" name="id" id="id" placeholder="아이디" value={{id}}>
         </div>
@@ -19,6 +19,7 @@
         <button>로그인</button>
     </form>
     <a href="/join">회원가입</a>
+    <script type="text/javascript" src="js/login.js"></script>
     {% endblock %}
 </body>
 </html>

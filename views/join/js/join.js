@@ -53,7 +53,7 @@ function idDuplicate() { //id중복확인
             data: {id:id.value}, //id를 보냄
             async:false, //동기식으로 처리
             success: function(result) { //성공했을 때 콜백함수
-            if (result === false) {
+            if (result.result === false) {
                 //이미 존재하는 id일 때
                 alert('이미 존재하는 id입니다.');
                 id.focus();

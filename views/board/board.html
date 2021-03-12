@@ -1,17 +1,17 @@
 {% extends "../template/new.html" %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="/css/board.css">
+<link rel="stylesheet" type="text/css" href="./css/board.css">
 <div class="board_title">
-    <div class="b_title">글번호</div>
+    <div class="b_title">번호</div>
     <div class="b_title">제목</div>
-    <div class="b_title">글쓴이</div>
+    <div class="b_title">작성자</div>
 </div>
 {%for board in boards%}
-<div class="board_title">
-    <div class="b_contents">{{board.boardNo}}</div>
-    <div class="b_contents"><a href="/view">{{board.title}}</a></div>
-    <div class="b_contents">{{board.writer}}</div> 
+<div class="contents_title">
+    <div class="b_contents_No">{{board.boardNo}}</div>
+    <div class="b_contents_title"><a href="/view">{{board.title}}</a></div>
+    <div class="b_contents_writer">{{board.writer}}</div> 
 </div>
 {%endfor%}
-<button class="write"><a href="/board/write">글 작성</a></button>
+<button class="write"><a href="./board/write">글 작성</a></button>
 {% endblock %}
