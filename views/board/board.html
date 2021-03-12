@@ -9,9 +9,9 @@
 {%for board in boards%}
 <div class="contents_title">
     <div class="b_contents_No">{{board.boardNo}}</div>
-    <div class="b_contents_title"><a href="/view">{{board.title}}</a></div>
+    <div class="b_contents_title"><a href="/view?boardNo={{board.boardNo}}">{{board.title}}</a></div>
     <div class="b_contents_writer">{{board.writer}}</div> 
 </div>
 {%endfor%}
-<button class="write"><a href="./board/write">글 작성</a></button>
+<button class="write"><a href="/board/write">글 작성</a></button>
 {% endblock %}

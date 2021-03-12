@@ -1,11 +1,48 @@
 #write_title{
     resize: none;
     width: 500px;
-    border: 1px solid black;
+    height: 30px;
+    border-color: lightgray;
+    margin-bottom: 30px;
+    padding: 5px;
+    font-weight: bold;
+}
+#write_title:focus{
+    outline: none;
 }
 #write_textarea{
     width: 500px;
-    height: 600px;
+    height: 300px;
     word-wrap: break-word;
     resize: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-color: lightgray;
+}
+#write_textarea:focus{
+    outline: none;
+}
+#posting{
+    border: none;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(224, 50, 50);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cancle{
+    border: none;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(233, 233, 233);
+    
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+    font-weight: bold;
+}
+.length * {
+    display: inline-block;
 }

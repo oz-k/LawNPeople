@@ -13,7 +13,7 @@
     {%for board in boards%}
         <div class="board_title">
             <div class="b_contents">{{board.boardNo}}</div>
-            <div class="b_contents"><a href="/view">{{board.title}}</a></div>
+            <div class="b_contents"><a href="/view?boardNo={{board.boardNo}}">{{board.title}}</a></div>
             <div class="b_contents">{{board.writer}}</div> 
         </div>
     {%endfor%}

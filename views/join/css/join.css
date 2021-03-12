@@ -2,11 +2,13 @@ input{
     width: 500px;
     height: 30px;
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid gray;
     font-weight: bold;
 }
 input:focus{
     outline: none;
+    border-bottom-color: rgb(224, 50, 50);
+    transition-duration: .8s;
 }
 .box{
     margin-bottom: 30px;
@@ -27,7 +29,7 @@ input:focus{
     margin-left: 72px;
 }
 #join_form{
-    background-color: rgb(255, 72, 0);
+    background-color: rgb(224, 50, 50);
     border: none;
     cursor: pointer;
     width: 200px;
@@ -36,8 +38,23 @@ input:focus{
     color: #fff;
     font-size: 24px;
 }
+#join_form{
+    outline: none;
+}
 .join_container{
     border: 1px solid lightgray;
     border-radius: 5px;
     padding: 30px;
+}
+#overlap{
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(224, 50, 50);
+    color: #fff;
+    cursor: pointer;
+}
+#overlap:focus{
+    outline: none;
 }

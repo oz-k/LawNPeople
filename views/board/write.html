@@ -1,15 +1,20 @@
     {% extends "../template/new.html" %}
     {% block content %}
-    <link rel="stylesheet" type="text/css" href="/css/write.css">
+    <link rel="stylesheet" type="text/css" href="./css/write.css">
     <form action="/board/write-confirm" method="post">
     <div>
-        <textarea name="title" id="write_title" cols="30" rows="1" maxlength="30"></textarea>
+        <textarea name="title" id="write_title" cols="30" rows="1" maxlength="30" placeholder="제목을 입력해 주세요."></textarea>
     </div>
     <div>
-        <textarea name="contents" id="write_textarea" cols="30" rows="10" ></textarea>    
+        <textarea name="contents" id="write_textarea" cols="30" rows="10" maxlength="300"></textarea>    
         </div>
     
-    <button>확인</button>
-    <a href="/board">취소</a>
+    <button id="posting">등록</button>
+    <button class="cancle" type="button">취소</button>
+    <div class="length">
+        <div class="count">0</div>
+        <div> / 300</div>
+    </div>
 </form>
+<script type="text/javascript" src="./js/write.js"></script>
 {% endblock %}
