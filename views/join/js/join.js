@@ -6,7 +6,7 @@ const userName = document.querySelector('#name');
 const age = document.querySelector('#age');
 const email = document.querySelector('#email');
 
-function duplicateBtn(){
+
 document.getElementById('overlap').addEventListener('click', function() { //id 중복확인버튼 이벤트
     if(idCompare()){ //id가 공백이아니고
         if(idDuplicate()) { //사용가능한 id일 때
@@ -14,7 +14,7 @@ document.getElementById('overlap').addEventListener('click', function() { //id �
         }
     } 
 })
-}
+
 
 function checkAll() { //전체 확인
     if(!idCompare()) {
@@ -30,9 +30,6 @@ function checkAll() { //전체 확인
     } else if(!checkAge()) {
         return false;
     } else if(!checkEmail()) {
-        return false;
-    } else if(!duplicateBtn()) {
-        alert("id 중복확인을 해주세요.");
         return false;
     } else {
         return true;

@@ -21,14 +21,6 @@ router.get('/login', function(req, res) { //로그인화면
 router.post('/auth', function(req, res, next) { //로그인로직
     req.flash('id', req.body.id);
 
-    if(!req.body.id) { //id가 들어있는지 확인
-        req.flash('msg', 'idnull');
-        return res.redirect('/login');
-    }
-    if(!req.body.pw) { //pw가 들어있는지 확인
-        req.flash('msg', 'pwnull');
-        return res.redirect('/login');
-    }
     passport.authenticate('local', function(err, user, msg) {
         if(err) return next(err);
         loginCheck(user.user, msg);

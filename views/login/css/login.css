@@ -5,7 +5,9 @@ input{
     font-size: 24px;
     padding-left: 1%;
 }
-
+.login_box{
+    margin-top: 150px;
+}
 input:focus{
     outline-color: rgb(224, 50, 50);
 }
@@ -21,10 +23,10 @@ button{
 }
 a{
     text-decoration: none;
-    color: black;
+    color: blue;
 }
 a:hover{
-    color: gray;
+    color: lightblue;
 }
 p{
     display: inline-block;
