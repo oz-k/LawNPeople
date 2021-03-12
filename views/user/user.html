@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     {% extends "../template/new.html" %}
     {% block content %}
-    <div class="content name">이름 : {{userInfo.name}}</div>
-    <div class="content age">나이 : {{userInfo.age}}</div>
-    <div class="content email">이메일 : {{userInfo.email}}</div>
+    <link rel="stylesheet" type="text/css" href="./css/user.css">
+    <div class="profile">
+        <p class="contents_name">이름</p>
+        <div class="content name">{{userInfo.name}}</div>
+        <p class="contents_name">나이</p>
+        <div class="content age">{{userInfo.age}}</div>
+        <p class="contents_name">이메일</p>
+        <div class="content email">{{userInfo.email}}</div>
+    </div>
     <div class="content my">작성글</div>
     {%for board in boards%}
         <div class="board_title">
@@ -20,5 +18,3 @@
         </div>
     {%endfor%}
     {% endblock %}
-</body>
-</html>

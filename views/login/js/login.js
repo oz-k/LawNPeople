@@ -7,7 +7,7 @@ function accountCheck(){
         url: '/ajax',
         dataType: 'json',
         type: 'POST',
-        data: {id:id.value},
+        data: {id:id.value, pw:pw.value},
         async: false,
         success: function(result) {
             if(result === true) {

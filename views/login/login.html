@@ -1,25 +1,15 @@
-{% extends "../template/new.html" %}
+    {% extends "../template/new.html" %}
     {% block content %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ㅇㅇ</title>
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
     <form action="/auth" method="POST" onsubmit="return check();">
         <div class="id_box">
-            <input type="text" name="id" id="id" placeholder="아이디" value={{id}}>
+            <input type="text" name="id" id="id" placeholder="아이디">
         </div>
         <div class="pw_box">
             <input type="password" name="pw" id="pw" placeholder="비밀번호">
         </div>
-        <button>로그인</button>
+        <button type="button">로그인</button>
     </form>
-    <a href="/join">회원가입</a>
-    <script type="text/javascript" src="js/login.js"></script>
+    <p>아직 회원이 아니신가요?&ensp;</p><a href="/join">회원가입</a>
+    <script type="text/javascript" src="/js/login.js"></script>
     {% endblock %}
-</body>
-</html>

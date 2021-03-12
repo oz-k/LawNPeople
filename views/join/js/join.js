@@ -6,6 +6,7 @@ const userName = document.querySelector('#name');
 const age = document.querySelector('#age');
 const email = document.querySelector('#email');
 
+function duplicateBtn(){
 document.getElementById('overlap').addEventListener('click', function() { //id 중복확인버튼 이벤트
     if(idCompare()){ //id가 공백이아니고
         if(idDuplicate()) { //사용가능한 id일 때
@@ -13,6 +14,7 @@ document.getElementById('overlap').addEventListener('click', function() { //id �
         }
     } 
 })
+}
 
 function checkAll() { //전체 확인
     if(!idCompare()) {
@@ -28,6 +30,9 @@ function checkAll() { //전체 확인
     } else if(!checkAge()) {
         return false;
     } else if(!checkEmail()) {
+        return false;
+    } else if(!duplicateBtn()) {
+        alert("id 중복확인을 해주세요.");
         return false;
     } else {
         return true;
@@ -47,13 +52,13 @@ function idCompare(){ //id 공백확인
 function idDuplicate() { //id중복확인
     let flag = true;
     $.ajax({
-        url: '/ajax', //ajax라는 url로 data보냄 
+        url: '/ajax', //ajax라는 url로 data보냄
             dataType: 'json', //dataType은 json
             type: 'POST', //post방식으로 보냄
             data: {id:id.value}, //id를 보냄
             async:false, //동기식으로 처리
             success: function(result) { //성공했을 때 콜백함수
-            if (result.result === false) {
+            if (result === false) {
                 //이미 존재하는 id일 때
                 alert('이미 존재하는 id입니다.');
                 id.focus();

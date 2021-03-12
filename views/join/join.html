@@ -1,7 +1,8 @@
 {% extends "../template/new.html" %}
     {% block content %}
-    <link rel="stylesheet" type="text/css" href="css/join.css">
+    <link rel="stylesheet" type="text/css" href="./css/join.css">
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <h2>정보를 입력해 주세요.</h1>
     <div class="join_container">
     <form action="/join-confirm" method="POST" onsubmit="return checkAll();">
         <div class="box id">
@@ -13,7 +14,7 @@
         </div>
         <div class="box repw">
             <input type="password" name="repw" id="repw" placeholder="비밀번호 재확인">
-            <p class="message">비밀번호가 일치하지 않습니다.</p>
+            <p class="message">입력한 비밀번호와 재입력한 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.</p>
         </div>
         <div class="box name">
             <input type="text" name="name" id="name" placeholder="이름">
@@ -27,5 +28,5 @@
         <button id="join_form">회원가입</button>
     </form>
     </div>
-<script type="text/javascript" src="js/join.js"></script>
+<script type="text/javascript" src="./js/join.js"></script>
 {% endblock %}
